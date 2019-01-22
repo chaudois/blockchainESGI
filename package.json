@@ -1,0 +1,33 @@
+{
+  "name": "blockchain-vote-esgi",
+  "version": "0.1.0",
+  "description": "Vote DApp on Ethereum",
+  "main": "index.js",
+  "scripts": {
+    "test": "test-todo"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaudois/blockchainESGI.git"
+  },
+  "keywords": [
+    "ethereum",
+    "blockchain",
+    "dapp",
+    "vote",
+    "esgi"
+  ],
+  "author": "Damien",
+  "contributors": [
+    {
+      "name": "Tristan",
+      "url": "https://github.com/TristanEduProjet"
+    }
+  ],
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/chaudois/blockchainESGI/issues"
+  },
+  "homepage": "https://github.com/chaudois/blockchainESGI#readme"
+}
