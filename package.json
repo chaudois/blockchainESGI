@@ -2,9 +2,10 @@
   "name": "blockchain-vote-esgi",
   "version": "0.1.0",
   "description": "Vote DApp on Ethereum",
-  "main": "index.js",
+  "main": "truffle.js",
   "scripts": {
-    "test": "test-todo"
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "private": true,
   "repository": {
@@ -29,5 +30,11 @@
   "bugs": {
     "url": "https://github.com/chaudois/blockchainESGI/issues"
   },
-  "homepage": "https://github.com/chaudois/blockchainESGI#readme"
+  "homepage": "https://github.com/chaudois/blockchainESGI#readme",
+  "dependencies": {
+    "truffle": "^5.0.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
+  }
 }
