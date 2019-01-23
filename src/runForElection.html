@@ -7,7 +7,7 @@
 
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 
-		<title>BlocVoting - Home</title>
+		<title>BlocVoting - Run for Election</title>
 	</head>
 	
 	<body>
@@ -35,27 +35,25 @@
     
 		<br>
   
-		<div id="voteBody" class="container-fluid">
+		<div id="runForElectionBody" class="container-fluid">
 
 			<div class="row">
 				<div class="col">
-					<h1>Assign positions to each candidates</h1>
+					<h1>Run for Election</h1>
 				</div>
 			</div>
 			
 			<br>
-			
-			<div id="voteErrorBody" style="display: none;">
+
+			<div id="formErrorBody" style="display: none;">
 
 				<div class="row">		
 					<div class="col">		
 						<div class="alert alert-dismissible fade show alert-danger" role="alert">
-							<h1 class="alert-heading">Error ! There is a mistake with the candidates' position !</h1>
-							<button id="voteErrorBodyAlertButton" type="button" class="close" aria-label="Close">
+							<h1>Error ! Some information are missing in the form !<small class="text-muted"> Please, fill-in all the red fields</small></h1>
+							<button id="formErrorBodyAlertButton" type="button" class="close" aria-label="Close">
 							    <span aria-hidden="true">&times;</span>
 							</button>
-							<h4>Every candidate must have a position !</h4>							
-							<h4 class="mb-0">Two candidates can't have the same position !</h4>
 						</div>
 					</div>
 				</div>
@@ -63,27 +61,40 @@
 			</div>
 
 			<br>
+			
+			<form>
 
-			<div id="candidateList" class="row">				
-
-			</div>
+			  	<div class="form-group">
+					<label for="name">Your Name</label>
+					<input type="text" class="form-control" id="name" placeholder="Your Name" required="true">
+			  	</div>
+			  	<div class="form-group">
+					<label for="party">Your Party</label>
+					<input type="text" class="form-control" id="party" placeholder="Your Party" required="true">
+			  	</div>
+			  	<div class="form-group">
+					<label for="descriptionTextarea">Write here a short description of yourself</label>
+					<textarea class="form-control" id="descriptionTextarea" rows="5"></textarea>
+			  	</div>
 		
-			<br>
-	
-			<div class="row">
-				<div class="col">
-					<button id="buttonSendVote" type="button" class="btn btn-primary btn-lg btn-block">Submit Vote</button>
+				<br>
+		
+				<div class="row">
+					<div class="col">
+						<button id="buttonRunForElection" type="submit" class="btn btn-primary btn-lg btn-block">Run for the Election</button>
+					</div>
 				</div>
-			</div>
+
+			</form>
 		
 		</div>
 
-		<div id="alreadyVotedBody" class="container-fluid" style="display: none;">
+		<div id="alreadyCandidateBody" class="container-fluid" style="display: none;">
 
-			<div class="row">		
-				<div class="col">		
+			<div class="row">				
+				<div class="col">
 					<div class="alert alert-danger" role="alert">
-						<h1>You can't vote twice !<small class="text-muted"> You will be redirected to the result's page...</small></h1>
+						<h1>You can't run for this election twice !<small class="text-muted"> You will be redirected to the home page...</small></h1>
 					</div>
 				</div>
 			</div>
@@ -93,15 +104,15 @@
 					<img src="img/loading.gif" class="responsive"> 
 				</div>
 			</div>
-		
+
 		</div>
 
-		<div id="voteSuccessBody" class="container-fluid" style="display: none;">
+		<div id="runForElectionSuccessBody" class="container-fluid" style="display: none;">
 
 			<div class="row">		
 				<div class="col">		
 					<div class="alert alert-success" role="alert">
-						<h1>Your vote have been counted !<small class="text-muted"> You will be redirected to the result's page...</small></h1>
+						<h1>You are now candidate for this election !<small class="text-muted"> You will be redirected to the home page...</small></h1>
 					</div>
 				</div>
 			</div>
@@ -122,7 +133,7 @@
 	    <script src="js/web3.min.js"></script>
 	    <script src="js/truffle-contract.js"></script>
 	
-		<script src="js/home.js"></script>
+		<script src="js/runForElection.js"></script>
 	
 	</body>
 	

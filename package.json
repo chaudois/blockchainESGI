@@ -1,6 +1,6 @@
 {
-  "name": "blockchain-vote-esgi",
-  "version": "0.1.0",
+  "name": "blockchain-voting",
+  "version": "0.2.0",
   "description": "Vote DApp on Ethereum",
   "main": "truffle.js",
   "scripts": {
