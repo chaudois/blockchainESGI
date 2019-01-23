@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+
+		<title>BlocVoting - Run for Election</title>
+	</head>
+	
+	<body>
+	  
+		<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+		
+			<a class="navbar-brand" href="./index.html">BlocVoting</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="./runForElection.html">Run for the Election</a>
+					</li>
+					
+					<li class="nav-item">
+						<a class="nav-link" href="./resultView.html">See Election's Result</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+    
+		<br>
+  
+		<div id="runForElectionBody" class="container-fluid">
+
+			<div class="row">
+				<div class="col">
+					<h1>Run for Election</h1>
+				</div>
+			</div>
+			
+			<br>
+
+			<div id="formErrorBody" style="display: none;">
+
+				<div class="row">		
+					<div class="col">		
+						<div class="alert alert-dismissible fade show alert-danger" role="alert">
+							<h1>Error ! Some information are missing in the form !<small class="text-muted"> Please, fill-in all the red fields</small></h1>
+							<button id="formErrorBodyAlertButton" type="button" class="close" aria-label="Close">
+							    <span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					</div>
+				</div>
+		
+			</div>
+
+			<br>
+			
+			<form>
+
+			  	<div class="form-group">
+					<label for="name">Your Name</label>
+					<input type="text" class="form-control" id="name" placeholder="Your Name" required="true">
+			  	</div>
+			  	<div class="form-group">
+					<label for="party">Your Party</label>
+					<input type="text" class="form-control" id="party" placeholder="Your Party" required="true">
+			  	</div>
+			  	<div class="form-group">
+					<label for="descriptionTextarea">Write here a short description of yourself</label>
+					<textarea class="form-control" id="descriptionTextarea" rows="5"></textarea>
+			  	</div>
+		
+				<br>
+		
+				<div class="row">
+					<div class="col">
+						<button id="buttonRunForElection" type="submit" class="btn btn-primary btn-lg btn-block">Run for the Election</button>
+					</div>
+				</div>
+
+			</form>
+		
+		</div>
+
+		<div id="alreadyCandidateBody" class="container-fluid" style="display: none;">
+
+			<div class="row">				
+				<div class="col">
+					<div class="alert alert-danger" role="alert">
+						<h1>You can't run for this election twice !<small class="text-muted"> You will be redirected to the home page...</small></h1>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">				
+				<div class="col text-center">
+					<img src="img/loading.gif" class="responsive"> 
+				</div>
+			</div>
+
+		</div>
+
+		<div id="runForElectionSuccessBody" class="container-fluid" style="display: none;">
+
+			<div class="row">		
+				<div class="col">		
+					<div class="alert alert-success" role="alert">
+						<h1>You are now candidate for this election !<small class="text-muted"> You will be redirected to the home page...</small></h1>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">				
+				<div class="col text-center">
+					<img src="img/loading.gif" class="responsive"> 
+				</div>
+			</div>
+		
+		</div>
+
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
+
+		<script src="js/bootstrap.min.js"></script>
+
+	    <script src="js/web3.min.js"></script>
+	    <script src="js/truffle-contract.js"></script>
+	
+		<script src="js/runForElection.js"></script>
+	
+	</body>
+	
+</html>
