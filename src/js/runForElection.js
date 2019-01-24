@@ -49,14 +49,28 @@ $(document).ready(function() {
 	}
 
 	function checkIfAlreadyCandidate(){
-
 		contracts.BlocVoting.deployed().then(function(instance) {
+			
+
+			return instance.isVoteRunning();
+
+	    }).then(function(isItTho) {
+	    	voteRuning = isItTho;
+	    });
+		contracts.BlocVoting.deployed().then(function(instance) {
+
 
 			return instance.candidatesAdresses(account);
 
 	    }).then(function(alreadyCandidate) {
 
-	    	if(alreadyCandidate) {
+    		if( voteRuning){
+    			$("#runForElectionBody").hide();
+				$("#votesNotRuning").fadeIn();
+
+				setTimeout(function(){ window.location.replace("index.html"); }, 7000);
+    		}
+	    	if(alreadyCandidate ) {
 
 	        	$("#runForElectionBody").hide();
 				$("#alreadyCandidateBody").fadeIn();
