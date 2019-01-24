@@ -77,10 +77,16 @@ $(document).ready(function() {
 	function loadCandidates(){
 
 		var blocVotingInstance;
-
 		contracts.BlocVoting.deployed().then(function(instance) {
 
 			blocVotingInstance = instance;
+      
+      		return blocVotingInstance.isVoteRunning();
+		}).then(function(isItTho){
+			voteIsRunning=isItTho;
+			return blocVotingInstance;
+		}).then(function(instance){
+
       
       		return blocVotingInstance.getCandidatesNumber();
 
@@ -100,7 +106,7 @@ $(document).ready(function() {
 
 		          	var description = candidate[3];
 
-		          	displayCandidate(id, name, party, description);
+		          	displayCandidate(id, name, party, description,voteIsRunning);
 		        });
 		    }
 
@@ -110,7 +116,7 @@ $(document).ready(function() {
 		});
 	}
 
-	function displayCandidate(id, name, party, description){
+	function displayCandidate(id, name, party, description,voteIsRunning){
 
 		var candidateCol = '';
 
@@ -140,6 +146,8 @@ $(document).ready(function() {
 
 				candidateCol += '</div>';
 
+				if(voteIsRunning){
+
 				candidateCol += '<div class="card-footer text-muted">';
 
 					candidateCol += '<select id="candidate'+id+'Position" class="form-control">';
@@ -154,13 +162,20 @@ $(document).ready(function() {
 					candidateCol += '</select>';
 
 				candidateCol += '</div>';
+				}
 
 			candidateCol += '</div>';
 
 		candidateCol += '</div>';
 
 		$("#candidateList").append(candidateCol);
+		if(!voteIsRunning){
+			$("#buttonSendVote").hide();
+
+		}
+
 	}
+
 
 	$("#buttonSendVote").click(function() {
 
